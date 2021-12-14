@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+
+{% block content %}
+<body class="text-center">
+   <div class="container">
+        <form method="POST" class="form-register" style="colour:white">
+            {{ form.hidden_tag() }}         <!-- cross site request forgery -->
+            <img class="mb-4" src="https://freepngimg.com/thumb/tv_shows/31348-4-spartacus-clipart.png" alt="" height="370" width="370">
+
+            <h1 class="h3 mb-3 font-weight-normal">
+                <br>
+                <br>
+                Please Create your Account
+            </h1>
+            <br>
+
+           {{ form.user_name.label() }}
+           {{ form.user_name(class='form-control' , placeholder='username') }}
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class='form-control' , placeholder='emailaddress') }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class='form-control' , placeholder='enter password') }}
+
+            {{ form.password2.label() }}
+            {{ form.password2(class='form-control' , placeholder='re-enter password') }}
+            <br>
+            <div class="checkbox mb-3">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+            <br>
+            {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </form>
+     </div>
+   </body>
+
+{% endblock %}

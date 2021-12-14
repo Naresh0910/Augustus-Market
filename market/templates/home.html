@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Augustus Market
+{% endblock %}
+{% block content %}
+<br>
+
+<style type="text/css">
+    img {
+         display: block;
+         margin: 0 auto 0 auto;
+    }
+
+
+</style>
+<img align="top" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0dde2abc-cb0b-4272-8973-434447c320e8/d7y9g1j-08e5d5c2-fdbf-4068-9d0f-4bf8d3c9740e.png/v1/fill/w_771,h_542,strp/game_of_thrones_png_logo_by_sohrabzia_d7y9g1j-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQyIiwicGF0aCI6IlwvZlwvMGRkZTJhYmMtY2IwYi00MjcyLTg5NzMtNDM0NDQ3YzMyMGU4XC9kN3k5ZzFqLTA4ZTVkNWMyLWZkYmYtNDA2OC05ZDBmLTRiZjhkM2M5NzQwZS5wbmciLCJ3aWR0aCI6Ijw9NzcxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.s-P_eHP3V8gv3kNCxhf0PGvQdby1AaBOQne9BAkd52A" alt="house stark"  style="vertical-align:middle" height="281" width="400">
+
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Augutus Market</h1>
+            <p class="lead font-weight-normal">Start purchasing products by clicking the link below</p>
+            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Get Started</a>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+{% endblock %}
