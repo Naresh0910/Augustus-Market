@@ -1,28 +1,75 @@
 {% extends 'base.html' %}
 {% block title %}
-    Welcome to Augustus Market
+Welcome to Augustus Market
 {% endblock %}
 {% block content %}
 <br>
 
 <style type="text/css">
     img {
-         display: block;
-         margin: 0 auto 0 auto;
+        display: block;
+        margin: 0 auto 0 auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
     }
 
 
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 </style>
-<img align="top" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0dde2abc-cb0b-4272-8973-434447c320e8/d7y9g1j-08e5d5c2-fdbf-4068-9d0f-4bf8d3c9740e.png/v1/fill/w_771,h_542,strp/game_of_thrones_png_logo_by_sohrabzia_d7y9g1j-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQyIiwicGF0aCI6IlwvZlwvMGRkZTJhYmMtY2IwYi00MjcyLTg5NzMtNDM0NDQ3YzMyMGU4XC9kN3k5ZzFqLTA4ZTVkNWMyLWZkYmYtNDA2OC05ZDBmLTRiZjhkM2M5NzQwZS5wbmciLCJ3aWR0aCI6Ijw9NzcxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.s-P_eHP3V8gv3kNCxhf0PGvQdby1AaBOQne9BAkd52A" alt="house stark"  style="vertical-align:middle" height="281" width="400">
+{% if theme == 'default' %}
 
+<div class="row">
+    <div class="column">
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Augutus Market</h1>
-            <p class="lead font-weight-normal">Start purchasing products by clicking the link below</p>
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Get Started</a>
-        </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
     </div>
+
+    <div class="column">
+        <img height="281"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2aeb4222-47b4-4093-9ee3-4441c2942a1f/da9qymb-b716ea56-13c7-4c4f-a540-a165cc2d5582.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJhZWI0MjIyLTQ3YjQtNDA5My05ZWUzLTQ0NDFjMjk0MmExZlwvZGE5cXltYi1iNzE2ZWE1Ni0xM2M3LTRjNGYtYTU0MC1hMTY1Y2MyZDU1ODIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.r0nYj3lmzTgHS9MiBp-WFfB5K4uPIx1lKEWkNh4_fIk"
+            alt="Snow" style="width:100%">
+    </div>
+
+    <div class="column">
+
+    </div>
+
+</div>
+
+{% elif theme == 'தமிழ்' %}
+<img align="top"
+    src='https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2021/07/20/e6p_czgvuaat_4z2766171.jpg?w=777&crop=0,10,777px,437px'
+    alt="image cannot process please use other browser" style="vertical-align:middle;border: 5px groove gold">
+{% elif theme == 'doge' %}
+<img align="top" src="https://dogemuchwow.com/wp-content/uploads/2020/12/bonk-it.jpg"
+    alt="image cannot process please use different browser" height="300" style="border: 5px solid #555;">
+{% elif theme == 'aot' %}
+<img align="top"
+    src="https://www.teahub.io/photos/full/217-2177962_anime-boy-levi-ackerman-attack-on-titan-wallpaper.jpg"
+    alt="image cannot process please use different browser" height="300" ">
+{% endif %}
+
+    <div class=" position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white;">
+<div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Augutus Market</h1>
+    <p class="lead font-weight-normal">Start purchasing products by clicking the link below</p>
+    <a class="btn btn-primary" href="{{ url_for('market_page') }}">Get Started</a>
+</div>
+<div class="product-device box-shadow d-none d-md-block"></div>
+<div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+
+
+
 {% endblock %}

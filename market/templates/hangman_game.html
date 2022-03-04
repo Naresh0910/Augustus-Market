@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hang Man Game</title>
+</head>
+
+<body style="background: black;color: white;">
+    <h2 style="color:skyblue;">Source code for Hang Man-Game</h2>
+    <pre>
+    <code>
+import random
+
+with open(r'________________') as f:   # <----- create a txt file with random names and plaste the location here!
+    words=f.readlines()
+
+word = random.choice(words)[:-1]
+
+allowed_errors = 7
+a=word[random.randint(0,len(word)-1)]
+b=word[random.randint(0,len(word)-1)]
+guesses = [a,b]
+done = False
+
+while not done :
+    for letter in word:
+        if letter.lower() in guesses:
+            print(letter, end=" ")
+        else:
+            print("_", end=" ")
+    print("")
+
+
+    guess = input(f'Allowed Errors left {allowed_errors} Next guess: ')
+    guesses.append(guess.lower())
+    if guess.lower() not in word.lower():
+        allowed_errors -=1
+        if allowed_errors==0:
+            break
+
+    done = True
+    for letter in word:
+        if letter.lower() not in guesses:
+            done = False
+
+if done:
+    print(f'You found the word! It was {word}')
+else:
+    print(f'Game Over! The word was {word}')
+
+    </code>
+</pre>
+
+</body>
+
+</html>
