@@ -14,9 +14,6 @@ Login Page
             {% if theme == 'default' %}
             <img class="mb-4" src="https://freepngimg.com/thumb/tv_shows/31376-8-spartacus-transparent-background.png"
                 alt="" height="370" width="370">
-            {% elif theme == 'தமிழ்' %}
-            <img src="https://pbs.twimg.com/media/EIrJZ4SVAAE71QT.jpg" height="320"
-                alt="image cannot be displayed try another browser :( !">
             {% elif theme == 'doge' %}
             <img align="top" src="https://c.tenor.com/FH--VIk5OXAAAAAd/doge-meme-doge-coin.gif"
                 alt="image cannot process please use different browser" height="300" style="border: 5px solid #555;">
@@ -28,36 +25,26 @@ Login Page
             {% endif %}
 
             <h1 class=" h3 mb-3 font-weight-normal">
-            {% if theme != 'தமிழ்' %}
+
             Please Login
-            {% elif theme == 'தமிழ்' %}
-            ப்ளீஸ் லாகின்
-            {% endif %}
+
             </h1>
             </br>
-            {% if theme != 'தமிழ்' %}
+
             {{ form.user_name.label() }}
             {{ form.user_name(class="form-control", placeholder="User Name") }}
 
             {{ form.password.label() }}
             {{ form.password(class="form-control", placeholder="Password") }}
-            {% elif theme == 'தமிழ்' %}
-            {{ form.user_name.label() }}
-            {{ form.user_name(class="form-control", placeholder="உஸ்ர் நேம்") }}
 
-            {{ form.password.label() }}
-            {{ form.password(class="form-control", placeholder="பாஸ்வர்ட் ") }}
-            {% endif %}
 
             </br>
 
 
             <div class="checkbox mb-3">
-                {% if theme != 'தமிழ்' %}
+
                 <h6>Do not have an account?</h6>
-                {% elif theme == 'தமிழ்' %}
-                <h6>அக்கௌன்ட் இல்லையா ?</h6>
-                {% endif %}
+
                 <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
             </div>
 

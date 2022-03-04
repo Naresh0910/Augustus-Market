@@ -15,10 +15,7 @@ Register Page
             {% if theme == 'default' %}
             <img class="mb-4" src="https://freepngimg.com/thumb/tv_shows/31348-4-spartacus-clipart.png" alt=""
                 height="370" width="370">
-            {% elif theme == 'தமிழ்' %}
-            <img class="mb-4"
-                src="https://tourhistorynet.files.wordpress.com/2019/02/0d8eb-aditha-karigalan-colour2.jpg?w=800"
-                height="380">
+
             {% elif theme == 'doge' %}
             <img src="https://c.tenor.com/u8HipC6HGYEAAAAM/dancing-dog.gif"
                 alt="sorry change the browser image cannot be processed" height="300">
@@ -33,7 +30,7 @@ Register Page
                 Please Create your Account
             </h1>
             <br>
-            {% if theme != 'தமிழ்' %}
+
             {{ form.user_name.label() }}
             {{ form.user_name(class='form-control' , placeholder='username') }}
 
@@ -45,27 +42,13 @@ Register Page
 
             {{ form.password2.label() }}
             {{ form.password2(class='form-control' , placeholder='re-enter password') }}
-            {% elif theme == 'தமிழ்' %}
-            {{ form.user_name.label() }}
-            {{ form.user_name(class='form-control' , placeholder='உஸ்ர் நேம்') }}
 
-            {{ form.email_address.label() }}
-            {{ form.email_address(class='form-control' , placeholder='ஈமெயில் அட்ரஸ் ') }}
-
-            {{ form.password1.label() }}
-            {{ form.password1(class='form-control' , placeholder='பாஸ்வர்ட் பதிவுசெய்யவும்') }}
-
-            {{ form.password2.label() }}
-            {{ form.password2(class='form-control' , placeholder='மீண்டும் பாஸ்வர்ட் பதிவுசெய்யவும்') }}
-            {% endif %}
 
             <br>
             <div class="checkbox mb-3">
-                {% if theme != 'தமிழ்' %}
+
                 <h6>Already have an account ?</h6>
-                {% elif theme == 'தமிழ்' %}
-                <h6>ஏற்கனவே அக்கௌன்ட் உள்ளதா ?</h6>
-                {% endif %}
+
                 <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
             </div>
             <br>
